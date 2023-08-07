@@ -24,9 +24,6 @@ class Question(models.Model):
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
-    
-    list_filter = ["pub_date"]
-    search_fields = ["question_text"]
 
 
 class Choice(models.Model):
